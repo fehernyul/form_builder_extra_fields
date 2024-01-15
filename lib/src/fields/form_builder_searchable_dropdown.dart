@@ -67,8 +67,7 @@ class FormBuilderSearchableDropdown<T> extends FormBuilderFieldDecoration<T> {
   final DropdownSearchPopupItemBuilder<T>? popupSelectionWidget;
 
   ///widget used to validate items in multiSelection mode
-  final ValidationMultiSelectionBuilder<T?>?
-      popupValidationMultiSelectionWidget;
+  final ValidationMultiSelectionBuilder<T?>? popupValidationMultiSelectionWidget;
 
   ///widget to add custom widget like addAll/removeAll on popup multi selection mode
   final ValidationMultiSelectionBuilder<T>? popupCustomMultiSelectionWidget;
@@ -128,7 +127,7 @@ class FormBuilderSearchableDropdown<T> extends FormBuilderFieldDecoration<T> {
     this.clearButtonProps,
     this.dropdownSearchTextStyle,
     this.dropdownButtonProps,
-    this.openSearchListOnLetterKeyDown,
+    this.openSearchListOnLetterKeyDown = false,
   })  : assert(T == String || compareFn != null),
         isMultiSelectionMode = false,
         dropdownBuilderMultiSelection = null,
@@ -147,8 +146,7 @@ class FormBuilderSearchableDropdown<T> extends FormBuilderFieldDecoration<T> {
               compareFn: compareFn,
               enabled: state.enabled,
               dropdownBuilder: dropdownBuilder,
-              dropdownButtonProps:
-                  dropdownButtonProps ?? const DropdownButtonProps(),
+              dropdownButtonProps: dropdownButtonProps ?? const DropdownButtonProps(),
               dropdownDecoratorProps: DropDownDecoratorProps(
                 dropdownSearchDecoration: state.decoration,
                 textAlign: dropdownSearchTextAlign,
@@ -170,10 +168,7 @@ class FormBuilderSearchableDropdown<T> extends FormBuilderFieldDecoration<T> {
         );
 
   @override
-  FormBuilderSearchableDropdownState<T> createState() =>
-      FormBuilderSearchableDropdownState<T>();
+  FormBuilderSearchableDropdownState<T> createState() => FormBuilderSearchableDropdownState<T>();
 }
 
-class FormBuilderSearchableDropdownState<T>
-    extends FormBuilderFieldDecorationState<FormBuilderSearchableDropdown<T>,
-        T> {}
+class FormBuilderSearchableDropdownState<T> extends FormBuilderFieldDecorationState<FormBuilderSearchableDropdown<T>, T> {}
