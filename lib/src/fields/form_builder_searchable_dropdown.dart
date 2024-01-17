@@ -89,6 +89,9 @@ class FormBuilderSearchableDropdown<T> extends FormBuilderFieldDecoration<T> {
   /// opens the search list when press a letter on the physical keyboard
   final bool openSearchListOnLetterKeyDown;
 
+  // fill backgound with this color when focused
+  final Color? focusedColor;
+
   /// Creates field for selecting value(s) from a searchable list
   FormBuilderSearchableDropdown({
     super.key,
@@ -128,6 +131,7 @@ class FormBuilderSearchableDropdown<T> extends FormBuilderFieldDecoration<T> {
     this.dropdownSearchTextStyle,
     this.dropdownButtonProps,
     this.openSearchListOnLetterKeyDown = false,
+    this.focusedColor,
   })  : assert(T == String || compareFn != null),
         isMultiSelectionMode = false,
         dropdownBuilderMultiSelection = null,
@@ -163,6 +167,7 @@ class FormBuilderSearchableDropdown<T> extends FormBuilderFieldDecoration<T> {
               popupProps: popupProps,
               selectedItem: state.value,
               openSearchListOnLetterKeyDown: openSearchListOnLetterKeyDown,
+              focusedColor: focusedColor,
             );
           },
         );
