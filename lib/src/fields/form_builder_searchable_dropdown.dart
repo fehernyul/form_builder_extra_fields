@@ -89,8 +89,11 @@ class FormBuilderSearchableDropdown<T> extends FormBuilderFieldDecoration<T> {
   /// opens the search list when press a letter on the physical keyboard
   final bool openSearchListOnLetterKeyDown;
 
-  // fill backgound with this color when focused
+  /// fill backgound with this color when focused
   final Color? focusedColor;
+  
+  ///DropdownSearch widget key
+  final Key? dropdownSearchKey;
 
   /// Creates field for selecting value(s) from a searchable list
   FormBuilderSearchableDropdown({
@@ -132,6 +135,7 @@ class FormBuilderSearchableDropdown<T> extends FormBuilderFieldDecoration<T> {
     this.dropdownButtonProps,
     this.openSearchListOnLetterKeyDown = false,
     this.focusedColor,
+    this.dropdownSearchKey,
   })  : assert(T == String || compareFn != null),
         isMultiSelectionMode = false,
         dropdownBuilderMultiSelection = null,
@@ -144,6 +148,7 @@ class FormBuilderSearchableDropdown<T> extends FormBuilderFieldDecoration<T> {
           builder: (FormFieldState<T?> field) {
             final state = field as FormBuilderSearchableDropdownState<T>;
             return DropdownSearch<T>(
+              key: dropdownSearchKey,
               // Hack to rebuild when didChange is called
               asyncItems: asyncItems,
               clearButtonProps: clearButtonProps ?? const ClearButtonProps(),
