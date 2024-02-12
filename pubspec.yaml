@@ -22,6 +22,10 @@ dependencies:
   flutter_typeahead: ^4.7.0
   flutter_rating_bar: ^4.0.1
 
+dependency_overrides:
+  dropdown_search:
+    path: ../searchable_dropdown
+
 dev_dependencies:
   flutter_lints: ^2.0.3
   flutter_test:
