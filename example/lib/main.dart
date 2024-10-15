@@ -59,7 +59,7 @@ class MyHomePageState extends State<MyHomePage> {
                 FormBuilderSearchableDropdown<String>(
                   name: 'searchable_dropdown_online',
                   onChanged: _onChanged,
-                  asyncItems: (filter) async {
+                  items: (String filter, LoadProps? loadProps) async {
                     await Future.delayed(const Duration(seconds: 1));
                     return allCountries
                         .where((element) => element
@@ -78,7 +78,7 @@ class MyHomePageState extends State<MyHomePage> {
                     labelText: 'Search',
                   ),
                   name: 'searchable_dropdown_offline',
-                  items: allCountries,
+                  
                   onChanged: _onChanged,
                   decoration: const InputDecoration(
                       labelText: 'Searchable Dropdown Offline'),

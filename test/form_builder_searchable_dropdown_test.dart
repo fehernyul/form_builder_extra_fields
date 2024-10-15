@@ -20,7 +20,9 @@ void main() {
       key: testWidgetKey,
       name: textFieldName,
       initialValue: initialTextValue,
-      items: options,
+      items: (_, __) {
+        return options;
+      },
       dropdownBuilder: (_, country) => Text.rich(TextSpan(text: country)),
       onChanged: (query) => result = query,
     );
