@@ -99,6 +99,8 @@ class FormBuilderSearchableDropdown<T> extends FormBuilderFieldDecoration<T> {
   ///DropdownSearch widget key
   final Key? dropdownSearchKey;
 
+  final bool? isHovering;
+
   /// Creates field for selecting value(s) from a searchable list
   FormBuilderSearchableDropdown({
     super.key,
@@ -140,6 +142,7 @@ class FormBuilderSearchableDropdown<T> extends FormBuilderFieldDecoration<T> {
     this.openSearchListOnLetterKeyDown = false,
     this.focusedColor,
     this.dropdownSearchKey,
+    this.isHovering
   })  : assert(T == String || compareFn != null),
         isMultiSelectionMode = false,
         dropdownBuilderMultiSelection = null,
@@ -168,7 +171,8 @@ class FormBuilderSearchableDropdown<T> extends FormBuilderFieldDecoration<T> {
               // dropdownButtonProps: dropdownButtonProps ?? const DropdownButtonProps(),
 
               decoratorProps: DropDownDecoratorProps(
-                decoration: state.decoration,
+                isHovering: isHovering ?? false,
+                decoration:  state.decoration,
                 textAlign: dropdownSearchTextAlign,
                 textAlignVertical: dropdownSearchTextAlignVertical,
                 baseStyle: dropdownSearchTextStyle,
