@@ -187,7 +187,6 @@ class FormBuilderSearchableDropdown<T> extends FormBuilderFieldDecoration<T> {
               popupProps: popupProps,
               selectedItem: state.value,
               openSearchListOnLetterKeyDown: openSearchListOnLetterKeyDown,
-              focusedColor: focusedColor,
             );
           },
         );
