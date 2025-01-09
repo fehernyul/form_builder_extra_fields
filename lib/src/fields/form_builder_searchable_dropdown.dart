@@ -70,8 +70,7 @@ class FormBuilderSearchableDropdown<T> extends FormBuilderFieldDecoration<T> {
   final DropdownSearchPopupItemBuilder<T>? popupSelectionWidget;
 
   ///widget used to validate items in multiSelection mode
-  final ValidationMultiSelectionBuilder<T?>?
-      popupValidationMultiSelectionWidget;
+  final ValidationMultiSelectionBuilder<T?>? popupValidationMultiSelectionWidget;
 
   ///widget to add custom widget like addAll/removeAll on popup multi selection mode
   final ValidationMultiSelectionBuilder<T>? popupCustomMultiSelectionWidget;
@@ -102,48 +101,48 @@ class FormBuilderSearchableDropdown<T> extends FormBuilderFieldDecoration<T> {
   final bool? isHovering;
 
   /// Creates field for selecting value(s) from a searchable list
-  FormBuilderSearchableDropdown({
-    super.key,
-    super.autovalidateMode,
-    super.enabled,
-    super.focusNode,
-    super.onSaved,
-    super.validator,
-    super.decoration,
-    required super.name,
-    super.initialValue,
-    super.onChanged,
-    super.valueTransformer,
-    super.onReset,
-    // this.asyncItems,
-    this.autoValidateMode,
-    this.compareFn,
-    this.dropdownBuilder,
-    this.dropdownSearchDecoration,
-    this.dropdownSearchTextAlign,
-    this.dropdownSearchTextAlignVertical,
-    this.filterFn,
-    // this.isFilteredOnline = false,
-    this.itemAsString,
-    this.items,
-    this.onBeforeChange,
-    this.popupOnItemAdded,
-    this.popupOnItemRemoved,
-    this.popupSelectionWidget,
-    this.selectedItem,
-    this.selectedItems = const [],
-    this.popupProps = const PopupProps.menu(
-      showSearchBox: true,
-      fit: FlexFit.loose,
-    ),
-    this.clearButtonProps,
-    this.dropdownSearchTextStyle,
-    this.dropdownButtonProps,
-    this.openSearchListOnLetterKeyDown = false,
-    this.focusedColor,
-    this.dropdownSearchKey,
-    this.isHovering
-  })  : assert(T == String || compareFn != null),
+  FormBuilderSearchableDropdown(
+      {super.key,
+      super.autovalidateMode,
+      super.enabled,
+      super.focusNode,
+      super.onSaved,
+      super.validator,
+      super.decoration,
+      required super.name,
+      super.initialValue,
+      super.onChanged,
+      super.valueTransformer,
+      super.onReset,
+      // this.asyncItems,
+      this.autoValidateMode,
+      this.compareFn,
+      this.dropdownBuilder,
+      this.dropdownSearchDecoration,
+      this.dropdownSearchTextAlign,
+      this.dropdownSearchTextAlignVertical,
+      this.filterFn,
+      // this.isFilteredOnline = false,
+      this.itemAsString,
+      this.items,
+      this.onBeforeChange,
+      this.popupOnItemAdded,
+      this.popupOnItemRemoved,
+      this.popupSelectionWidget,
+      this.selectedItem,
+      this.selectedItems = const [],
+      this.popupProps = const PopupProps.menu(
+        showSearchBox: true,
+        fit: FlexFit.loose,
+      ),
+      this.clearButtonProps,
+      this.dropdownSearchTextStyle,
+      this.dropdownButtonProps,
+      this.openSearchListOnLetterKeyDown = false,
+      this.focusedColor,
+      this.dropdownSearchKey,
+      this.isHovering})
+      : assert(T == String || compareFn != null),
         isMultiSelectionMode = false,
         dropdownBuilderMultiSelection = null,
         onBeforeChangeMultiSelection = null,
@@ -164,15 +163,14 @@ class FormBuilderSearchableDropdown<T> extends FormBuilderFieldDecoration<T> {
               enabled: state.enabled,
               dropdownBuilder: dropdownBuilder,
               suffixProps: DropdownSuffixProps(
-                dropdownButtonProps:
-                    dropdownButtonProps ?? const DropdownButtonProps(),
+                dropdownButtonProps: dropdownButtonProps ?? const DropdownButtonProps(),
                 clearButtonProps: clearButtonProps ?? const ClearButtonProps(),
               ),
               // dropdownButtonProps: dropdownButtonProps ?? const DropdownButtonProps(),
 
               decoratorProps: DropDownDecoratorProps(
                 isHovering: isHovering ?? false,
-                decoration:  state.decoration,
+                decoration: state.decoration,
                 textAlign: dropdownSearchTextAlign,
                 textAlignVertical: dropdownSearchTextAlignVertical,
                 baseStyle: dropdownSearchTextStyle,
@@ -192,10 +190,7 @@ class FormBuilderSearchableDropdown<T> extends FormBuilderFieldDecoration<T> {
         );
 
   @override
-  FormBuilderSearchableDropdownState<T> createState() =>
-      FormBuilderSearchableDropdownState<T>();
+  FormBuilderSearchableDropdownState<T> createState() => FormBuilderSearchableDropdownState<T>();
 }
 
-class FormBuilderSearchableDropdownState<T>
-    extends FormBuilderFieldDecorationState<FormBuilderSearchableDropdown<T>,
-        T> {}
+class FormBuilderSearchableDropdownState<T> extends FormBuilderFieldDecorationState<FormBuilderSearchableDropdown<T>, T> {}
